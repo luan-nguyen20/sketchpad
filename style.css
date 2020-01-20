@@ -2,7 +2,7 @@ html{
     text-align: center;
 }
 
-button{
+.clearBtn{
     margin-top: 25px;
     height:80px;
     width:150px;
