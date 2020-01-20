@@ -1,6 +1,6 @@
 const gridContainer = document.querySelector('.gridContainer');
 
-window.onload = createSquareGrid(3);
+window.onload = createSquareGrid(16);
 
 //create a grid with same number of rows and columns.
 //size = row num = column num
@@ -25,8 +25,13 @@ function createCell(){
 }
 
 //mouse hover event listener for cells
-const cells = document.querySelectorAll('.cell');
-cells.forEach(cell => cell.addEventListener('mouseover',changeBGColor));
+let cells;
+function addCellsEventListener(){
+    cells = document.querySelectorAll('.cell');
+    cells.forEach(cell => cell.addEventListener('mouseover',changeBGColor));
+}
+
+addCellsEventListener();
 
 //change color by adding class 'hover'
 function changeBGColor(e){ e.target.classList.add('hover'); }
@@ -38,4 +43,17 @@ clearBtn.addEventListener('click',clear);
 //clear by removing class 'hover'
 function clear(){
     cells.forEach(cell => cell.classList.remove('hover'));
+}
+
+//event listener for new canvas button
+const newBtn = document.querySelector('.createNewGridBtn');
+newBtn.addEventListener('click',createUserGrid);
+
+function createUserGrid(){
+    let size = prompt('What size for your canvas (1-64) ?');
+    //remove all children of gridContainer to delete grid
+    while(gridContainer.firstChild) { gridContainer.removeChild(gridContainer.firstChild); }
+    //create grid and add listeners
+    createSquareGrid(size);
+    addCellsEventListener();
 }

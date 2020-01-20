@@ -1,13 +1,15 @@
 html{
     text-align: center;
+    background-color: lightblue;
 }
 
-.clearBtn{
+button{
     margin-top: 25px;
     height:80px;
     width:150px;
     font-size: 20px;
     font-weight: bold;
+    vertical-align: top;
 }
 
 .gridContainer{
@@ -17,8 +19,9 @@ html{
     margin: 25px auto;  /*top and bottom: 0, left and right: auto (center)*/
 }
 
-div{
+.cell{
     border: solid black;
+    background-color: white;
 }
 
 .hover{
