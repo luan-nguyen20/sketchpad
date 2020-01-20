@@ -49,11 +49,25 @@ function clear(){
 const newBtn = document.querySelector('.createNewGridBtn');
 newBtn.addEventListener('click',createUserGrid);
 
+//this regex means matching a digit character
+let regex = /[0-9]/;
+
+//Function to check if input has only numbers
+// check if input has any characters, if yes, return true
+function isNumOnly(input) { return(!regex.test(input) ? false : true); }
+
+  //create new grid with user-defined size 1-64
 function createUserGrid(){
     let size = prompt('What size for your canvas (1-64) ?');
-    //remove all children of gridContainer to delete grid
-    while(gridContainer.firstChild) { gridContainer.removeChild(gridContainer.firstChild); }
-    //create grid and add listeners
-    createSquareGrid(size);
-    addCellsEventListener();
+    //if input has other characters than numbers, or if it's not a whole number, or if it's negative
+    if(!isNumOnly(size) || !Number.isInteger(+size) || (+size) < 0) { 
+        alert('Please enter whole numbers only (1-64)'); 
+    }
+    else{
+        //remove all children of gridContainer to delete grid
+        while(gridContainer.firstChild) { gridContainer.removeChild(gridContainer.firstChild); }
+        //create grid and add listeners
+        createSquareGrid(size);
+        addCellsEventListener();
+    }
 }
