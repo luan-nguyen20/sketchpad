@@ -2,13 +2,25 @@ html{
     text-align: center;
 }
 
+button{
+    margin-top: 25px;
+    height:80px;
+    width:150px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
 .gridContainer{
     display: grid;
     height: 700px;
     width: 1000px;
-    margin: 50px auto;  /*top and bottom: 0, left and right: auto (center)*/
+    margin: 25px auto;  /*top and bottom: 0, left and right: auto (center)*/
 }
 
 div{
     border: solid black;
+}
+
+.hover{
+    background-color: black;
 }

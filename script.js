@@ -1,14 +1,13 @@
 const gridContainer = document.querySelector('.gridContainer');
 
-window.onload = createSquareGrid(16);
+window.onload = createSquareGrid(3);
 
 //create a grid with same number of rows and columns.
 //size = row num = column num
 function createSquareGrid(size){
     //num of cells = size * size
-    for(i=0; i < size*size; i++){
-        createCell();
-    }
+    for(i=0; i < size*size; i++){ createCell(); }
+    
     //num colums to create = size
     //same as:
     //.gridContainer {
@@ -25,9 +24,6 @@ function createCell(){
 }
 
 const cells = document.querySelectorAll('.cell');
-//console.log(cells);
 cells.forEach(cell => cell.addEventListener('mouseover',changeBGColor));
 
-function changeBGColor(){
-    
-}
+function changeBGColor(e){ e.target.classList.add('hover'); }
