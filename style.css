@@ -1,42 +1,14 @@
+html{
+    text-align: center;
+}
+
 .gridContainer{
     display: grid;
-    /*grid-template-columns: repeat(16, 1fr);*/
-    height:500px;
-    width:500px;
+    height: 800px;
+    width: 800px;
+    margin: 50px auto;  /*top and bottom:0, left and right: auto (center)*/
 }
 
-.cell{
+div{
     border: solid black;
-    
-    /*
-    padding-top and padding-bottom is based on the parent element's width. 
-    So if you had an element that is 500px wide, and padding-top of 100%, the padding-top would be 500px.
-    Thhat's a square.
-    */
-    padding-top: 100%;
-
-    /*
-    If we force the height of the element to zero (height: 0;) 
-    and don't have any borders. Then padding will be the only part of the box model affecting the height, 
-    and we'll have our square.
-    */
-    height:0;
-
-    /*
-    the content of the cells is pushed down by the padding,
-    we hide it.
-    */
-    overflow: hidden;
-}
-
-.aspectRatioBoxInside{
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.hover{
-    background-color: black;
 }
