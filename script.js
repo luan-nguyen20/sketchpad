@@ -36,6 +36,12 @@ addCellsEventListener();
 //change color by adding class 'hover'
 function changeBGColor(e){ e.target.classList.add('hover'); }
 
+function colorPick(color){
+    color = 'red';
+    let cells = document.querySelectorAll('.hover');
+    cells.forEach(cell => cell.style.background = color);
+}
+
 //event listener for Clear button
 const clearBtn = document.querySelector('.clearBtn');
 clearBtn.addEventListener('click',clear);
