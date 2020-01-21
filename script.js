@@ -59,8 +59,10 @@ function isNumOnly(input) { return(!regex.test(input) ? false : true); }
   //create new grid with user-defined size 1-64
 function createUserGrid(){
     let size = prompt('What size for your canvas (1-64) ?');
+    //if press cancel, break out of func
+    if(size === null) {return;}
     //if input has other characters than numbers, or if it's not a whole number, or if it's negative
-    if(!isNumOnly(size) || !Number.isInteger(+size) || (+size) < 0) { 
+    else if(!isNumOnly(size) || !Number.isInteger(+size) || (+size) < 0) { 
         alert('Please enter whole numbers only (1-64)'); 
     }
     else{
